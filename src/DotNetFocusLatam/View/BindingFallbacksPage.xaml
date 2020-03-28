@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:DotNetFocusLatam.ViewModel"
+    Title="{Binding Title}"
+    x:Class="DotNetFocusLatam.View.BindingFallbacksPage">
+    <ContentPage.BindingContext>
+        <vm:BindingFallbacksViewModel />
+    </ContentPage.BindingContext>
+    <StackLayout
+        Spacing="50"
+        VerticalOptions="Center"
+        HorizontalOptions="Center">
+        <Label
+            HorizontalTextAlignment="Center"
+            Text="{Binding MyEntity1.Title, FallbackValue='No Property Located'}" />
+        <Label
+            HorizontalTextAlignment="Center"
+            Text="{Binding MyEntity2.Title, TargetNullValue='Invalid Title'}" />
+    </StackLayout>
+</ContentPage>

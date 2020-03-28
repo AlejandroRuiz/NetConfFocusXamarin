@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:DotNetFocusLatam.ViewModel"
+    x:DataType="vm:CompiledBindingsViewModel"
+    x:Class="DotNetFocusLatam.View.CompiledBindingsPage">
+    <ContentPage.BindingContext>
+        <vm:CompiledBindingsViewModel />
+    </ContentPage.BindingContext>
+    <StackLayout
+        VerticalOptions="Center"
+        HorizontalOptions="Center"
+        Spacing="20">
+        <Label
+            Text="{Binding SelectedValue, StringFormat='Current Value: {0:F2}'}" />
+        <Slider
+            x:DataType="vm:CompiledBindingsViewModel"
+            WidthRequest="300"
+            Maximum="100"
+            Minimum="0"
+            Value="{Binding SelectedValue}" />
+    </StackLayout>
+</ContentPage>

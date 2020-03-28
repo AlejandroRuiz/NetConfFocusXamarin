@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="{Binding Title}"
+    mc:Ignorable="d"
+    x:Class="DotNetFocusLatam.MainPage"
+    xmlns:vm="clr-namespace:DotNetFocusLatam.ViewModel">
+    <ContentPage.BindingContext>
+        <vm:MainViewModel />
+    </ContentPage.BindingContext>
+    <StackLayout>
+        <Button
+            Text="Basic Bindings"
+            Command="{Binding NavigateCommand}"
+            CommandParameter="{x:Static vm:MainViewModel.BasicBindingPage}" />
+        <Button
+            Text="Binding Mode"
+            Command="{Binding NavigateCommand}"
+            CommandParameter="{x:Static vm:MainViewModel.BindingModePage}" />
+        <Button
+            Text="String Format"
+            Command="{Binding NavigateCommand}"
+            CommandParameter="{x:Static vm:MainViewModel.StringFormatPage}" />
+        <Button
+            Text="Binding Path"
+            Command="{Binding NavigateCommand}"
+            CommandParameter="{x:Static vm:MainViewModel.BindingPathPage}" />
+        <Button
+            Text="Value Converters"
+            Command="{Binding NavigateCommand}"
+            CommandParameter="{x:Static vm:MainViewModel.ValueConverterPage}" />
+        <Button
+            Text="Relative Bindings"
+            Command="{Binding NavigateCommand}"
+            CommandParameter="{x:Static vm:MainViewModel.RelativeBindingsPage}" />
+        <Button
+            Text="Binding Fallbacks"
+            Command="{Binding NavigateCommand}"
+            CommandParameter="{x:Static vm:MainViewModel.BindingFallbacksPage}" />
+        <Button
+            Text="Compiled Bindings"
+            Command="{Binding NavigateCommand}"
+            CommandParameter="{x:Static vm:MainViewModel.CompiledBindingsPage}" />
+    </StackLayout>
+</ContentPage>

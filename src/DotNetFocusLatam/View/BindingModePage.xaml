@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:DotNetFocusLatam.ViewModel"
+    Title="{Binding Title}"
+    x:Class="DotNetFocusLatam.View.BindingModePage">
+    <ContentPage.BindingContext>
+        <vm:BindingModeViewModel />
+    </ContentPage.BindingContext>
+    <ScrollView>
+        <StackLayout
+            Spacing="100"
+            HorizontalOptions="Center">
+            <Entry
+                Text="{Binding Text, Mode=TwoWay}" />
+
+            <StackLayout HorizontalOptions="Center">
+                <ProgressBar
+                    WidthRequest="200"
+                    Progress="{Binding Progress, Mode=OneWay}" />
+                <Button
+                    Text="Start"
+                    Command="{Binding PerformActionCommand}" />
+            </StackLayout>
+
+            <Slider
+                Maximum="100"
+                Minimum="0"
+                Value="{Binding SliderValue, Mode=OneWayToSource}" />
+
+            
+            <Label
+                Text="{Binding Title, Mode=OneTime}" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

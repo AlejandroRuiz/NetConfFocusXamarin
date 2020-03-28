@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:DotNetFocusLatam.ViewModel"
+    Title="{Binding Title}"
+    x:Class="DotNetFocusLatam.View.BindingPathPage">
+    <ContentPage.BindingContext>
+        <vm:BindingPathViewModel />
+    </ContentPage.BindingContext>
+    <StackLayout
+        VerticalOptions="Center"
+        HorizontalOptions="Center"
+        Spacing="100">
+        <Label
+            Text="{Binding AwesomeEntity.Title}" />
+
+        <Label
+            Text="{Binding Entities[2].Title}" />
+    </StackLayout>
+</ContentPage>
